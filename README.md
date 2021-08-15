@@ -3,14 +3,8 @@
 ## Table of Contents
   - [Project Overview](#project-overview)
   - [Dataset](#dataset)
-    - [Overview](#overview)
-    - [Task](#task)
-    - [Access](#access)
   - [Automated ML](#automated-ml)
-    - [Results](#results)
-    - [Further improvements](#further-improvements)
   - [Hyperparameter Tuning](#hyperparameter-tuning)
-    - [Results](#results-1)
   - [Model Deployment](#model-deployment)
   - [Screen Recording](#screen-recording)
 
@@ -39,7 +33,7 @@ We are going to use this dataset to train a machine learning classifier where gi
 ### Access
 To access the dataset within the workspace we are directly downloading it from the web using the method 
 
-`TabularDatasetFactory.from_delimited_files(path="https://github.com/iolucas/AMLE_P3/raw/main/amazon_reviews.csv")`.
+```TabularDatasetFactory.from_delimited_files(path="https://github.com/iolucas/AMLE_P3/raw/main/amazon_reviews.csv")```.
 
 ## Automated ML
 
@@ -130,7 +124,7 @@ The best model found was the VotingEnsemble using the AutoML. It has been deploy
 
 The expected json format of the request is:
 
-`
+```
 {
     "data": [
         "i loved it", 
@@ -140,14 +134,14 @@ The expected json format of the request is:
     ]
 }
 
-`
+```
 
 The expected json output is the following:
-`[5,5,3,1]`
+```[5,5,3,1]```
 
 A sample code for submiting a request for the endpoint is:
 
-`
+```
 reviews = [
     "i loved it", 
     "fine product",
@@ -158,7 +152,7 @@ reviews = [
 predictions = requests.post(scoring_uri, json={
     "data": reviews
 }).json()
-`
+```
 
 
 ## Screen Recording
