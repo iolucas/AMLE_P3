@@ -65,16 +65,11 @@ def main():
     accuracy = model.score(test_data["review"], test_data["rating"])
     run.log("Accuracy", np.float(accuracy))
     
-    model_name = "model_" + "_".join([
-           str(args.use_stopwords),
-           str(args.use_binary_count),
-           str(args.ngram_range)
-    ]) + ".pkl"
     
-    model_name = "nb_model.pkl"
+    model_name = "model.pkl"
     
     #Save model for further reference
-    filename = os.path.join("outputs", "nb_model.pkl")
+    filename = os.path.join("outputs", model_name)
     
     joblib.dump(value=model, filename=filename)
     run.upload_file(name=model_name, path_or_stream=filename)

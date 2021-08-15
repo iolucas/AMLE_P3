@@ -1,24 +1,34 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
+# Rating Prediction of Amazon Reviews using AzureML
 
-# Your Project Title Here
+## Table of Contents
+1- [Overview](#overview)
 
-*TODO:* Write a short introduction to your project.
+## Project Overview
 
-## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
+In this project we want to use a dataset of reviews and rating from Amazon products to create a machine learning model to classify the rating value (ranging from 1 to 5) of a given review. This task is important since it may be some places where only the text review is available without any numerical rating, so being able to capture a numerical rating for given review is useful to generate reports and plan further actions to improve the customer experience. 
 
 ## Dataset
 
-https://www.kaggle.com/datafiniti/consumer-reviews-of-amazon-products
-
 ### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+
+The dataset used is a slightly different version of the [Consumer Reviews of Amazon Products](https://www.kaggle.com/datafiniti/consumer-reviews-of-amazon-products) where only the **rating** and **text reviews** fields have been extracted. 
+
+- The **review** field contain customers text reviews about several different products;
+- The **rating** field contain the rating that the customer gave to that product.
+
+See below a snippet of the dataset:
+
+![](dataset_example.png)
+
+This modified dataset is available [here](https://github.com/iolucas/AMLE_P3/raw/main/amazon_reviews.csv).
 
 ### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+We are going to use this dataset to train a machine learning classifier where given a **review** text, the model will predict the correspondent **rating** value for this review. These rating range from 1 (poor product experience) to 5 (awesome product experience).
 
 ### Access
-*TODO*: Explain how you are accessing the data in your workspace.
+To access the dataset within the workspace we are directly downloading it from the web using the method 
+
+`TabularDatasetFactory.from_delimited_files(path="https://github.com/iolucas/AMLE_P3/raw/main/amazon_reviews.csv")`.
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
