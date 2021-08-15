@@ -24,6 +24,7 @@ The dataset used is a slightly different version of the [Consumer Reviews of Ama
 See below a snippet of the dataset:
 
 ![](img/dataset_example.png)
+Figure 1 - Amazon review dataset sample.
 
 This modified dataset is available [here](https://github.com/iolucas/AMLE_P3/raw/main/amazon_reviews.csv).
 
@@ -52,10 +53,10 @@ The AutoML configuration was set as following:
 After 25 iterations the best model found by the AutoML was a VotingEnsemble achieving an accuracy of **0.8633**.
 
 ![](img/automl_rundetails.png)
-Figure - AutoML run details.
+Figure 2 - AutoML run details.
 
 ![](img/automl_bestmodel.png)
-Figure - AutoML best model found.
+Figure 3 - AutoML best model found.
 
 This Voting essemble is composed of:
 - A data preprocessing step
@@ -64,7 +65,7 @@ This Voting essemble is composed of:
 We can se a representation of the found model in the figure below with the models voting weights.
 
 ![](img/automl_diagram.png)
-Figure - VotingEnsemble representation.
+Figure 4 - VotingEnsemble representation.
 
 ### Further improvements
 There is a few things we can do in order to improve the results gotten here:
@@ -81,7 +82,7 @@ The model selected was a Naive Bayes together with a Count Vectorizer. This mode
 We can see below a representation of this archicteture:
 
 ![](img/nb_diagram.png)
-Figure - Naive Bayes model representation.
+Figure 5 - Naive Bayes model representation.
 
 The parameters chosen here to be optimized were:
 - Whether or not to use stopwords
@@ -104,10 +105,10 @@ After running the hyperdrive with our model the best accuracy achieved was **0.8
 - Ngram range: 4
 
 ![](img/hyperdrive_rundetails.png)
-Figure - Details of the Hyperdrive run.
+Figure 6 - Details of the Hyperdrive run.
 
 ![](img/hyperdrive_best_model.png)
-Figure - Best model found after all iterations.
+Figure 7 - Best model found after all iterations.
 
 ### Further improvements
 There is a few things we can do in order to improve the results gotten here:
@@ -121,6 +122,7 @@ There is a few things we can do in order to improve the results gotten here:
 The best model found was the VotingEnsemble using the AutoML. It has been deployed using ACI with 2 CPUs and 2GB of RAM.
 
 ![](img/working_model.png)
+Figure 8 - Running model endpoint.
 
 The expected json format of the request is:
 
